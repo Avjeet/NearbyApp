@@ -1,8 +1,8 @@
 package com.express.nearbyappassgn.di.modules
 
 import android.content.Context
-import com.express.nearbyappassgn.data.NearbyApiInterface
-import com.express.nearbyappassgn.data.interceptor.RetrofitInterceptor
+import com.express.nearbyappassgn.data.network.NearbyApiInterface
+import com.express.nearbyappassgn.data.network.interceptor.RetrofitInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

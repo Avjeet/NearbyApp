@@ -1,4 +1,4 @@
-package com.express.nearbyappassgn
+package com.express.nearbyappassgn.ui
 
 import android.content.pm.PackageManager
 import android.location.Location

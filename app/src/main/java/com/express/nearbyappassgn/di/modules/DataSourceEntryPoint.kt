@@ -1,6 +1,6 @@
 package com.express.nearbyappassgn.di.modules
 
-import com.express.nearbyappassgn.data.NearbyApiInterface
+import com.express.nearbyappassgn.data.network.NearbyApiInterface
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent

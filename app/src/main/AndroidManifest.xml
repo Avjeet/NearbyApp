@@ -18,7 +18,7 @@
         android:theme="@style/Theme.NearbyAppAssgn"
         tools:targetApi="31">
         <activity
-            android:name=".HomeVenueActivity"
+            android:name=".ui.HomeVenueActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

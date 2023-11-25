@@ -1,4 +1,4 @@
-package com.express.nearbyappassgn.data
+package com.express.nearbyappassgn.data.network
 
 import com.express.nearbyappassgn.BuildConfig
 import com.express.nearbyappassgn.model.VenueResponse

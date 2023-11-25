@@ -1,4 +1,4 @@
-package com.express.nearbyappassgn.data.interceptor
+package com.express.nearbyappassgn.data.network.interceptor
 
 import com.express.nearbyappassgn.BuildConfig
 import okhttp3.Interceptor
