@@ -14,7 +14,7 @@ import javax.inject.Inject
 const val PAGE_SIZE = 10
 
 class VenueRemotePagingSource @Inject constructor(
-    val range: Int, val location: LatLng,
+    private val range: Int, private val location: LatLng,
 ) :
     PagingSource<Int, Venue>() {
 

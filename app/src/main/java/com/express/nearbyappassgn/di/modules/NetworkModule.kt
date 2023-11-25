@@ -1,6 +1,7 @@
 package com.express.nearbyappassgn.di.modules
 
 import android.content.Context
+import com.express.nearbyappassgn.BuildConfig
 import com.express.nearbyappassgn.data.network.NearbyApiInterface
 import com.express.nearbyappassgn.data.network.interceptor.RetrofitInterceptor
 import dagger.Module
@@ -52,11 +53,11 @@ class NetworkModule {
             .writeTimeout(30, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
 
-        // if (BuildConfig.DEBUG) {
-        val logging = HttpLoggingInterceptor()
-        logging.level = HttpLoggingInterceptor.Level.BODY
-        client.addInterceptor(logging)
-        //}
+        if (BuildConfig.DEBUG) {
+            val logging = HttpLoggingInterceptor()
+            logging.level = HttpLoggingInterceptor.Level.BODY
+            client.addInterceptor(logging)
+        }
         return client.build()
     }
 

@@ -26,7 +26,6 @@ import kotlinx.coroutines.launch
 class HomeVenueActivity : AppCompatActivity(), AdapterVenueList.OnItemClickListener {
 
     private val LOCATION_PERMISSION_REQUEST_CODE = 1
-    private val INITIAL_PAGE_ITEMS = 10
 
     private lateinit var binding: ActivityHomeVenueBinding
     private lateinit var adapterVenueList: AdapterVenueList
@@ -115,6 +114,7 @@ class HomeVenueActivity : AppCompatActivity(), AdapterVenueList.OnItemClickListe
     }
 
     override fun onItemClick(position: Int, item: VenueUIItem) {
-
+        Toast.makeText(this, "${item.name} is clicked, open link in new screen", Toast.LENGTH_LONG).show()
+        // implement click here
     }
 }

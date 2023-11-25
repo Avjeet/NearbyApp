@@ -24,24 +24,10 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeVenueViewModel @Inject constructor(private val homeVenueRepository: HomeVenueRepository) : ViewModel() {
 
-    val _range = MutableLiveData(0)
+    private val _range = MutableLiveData(0)
     val range: LiveData<Int> = _range
 
-    val currentLatLngLiveData = MutableLiveData<LatLng>()
-
-    fun fetchVenueList(newRange: Int, currentLatLng: LatLng): Flow<PagingData<VenueUIItem>> {
-        return if (currentLatLngLiveData.value != null) {
-            currentLatLngLiveData.value = currentLatLng
-            homeVenueRepository.getVenuesByRange(currentLatLng, newRange)
-                .map { pagingData ->
-                    pagingData.map { VenueUIItem.mapVenueToUiObject(it) }
-                }.cachedIn(viewModelScope)
-        } else {
-            // If currentLatLng is null, emit an empty PagingData
-            flowOf(PagingData.empty())
-        }
-    }
-
+    private val currentLatLngLiveData = MutableLiveData<LatLng>()
     fun fetchVenueListFromRange(): Flow<PagingData<VenueUIItem>> {
         return range.asFlow()
             .filter { currentLatLngLiveData.value != null }
@@ -56,7 +42,7 @@ class HomeVenueViewModel @Inject constructor(private val homeVenueRepository: Ho
     }
 
     fun updateRange(newRange: Int) {
-        _range.value = newRange.toInt()
+        _range.value = newRange
     }
 
     fun setCurrentLocation(latLng: LatLng) {
